@@ -1,24 +1,48 @@
 <ion-header>
   <ion-toolbar>
+    <!-- Tombol kembali di header -->
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home"> 
+        <ion-icon name="arrow-back" slot="start"></ion-icon>
+        Kembali
+      </ion-button>
+    </ion-buttons>
     <ion-title>Register</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <ion-list>
     <ion-item>
       <ion-label position="floating">Nama</ion-label>
       <ion-input [(ngModel)]="name" type="text"></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-label position="floating">Email</ion-label>
       <ion-input [(ngModel)]="email" type="email"></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-label position="floating">Password</ion-label>
       <ion-input [(ngModel)]="password" type="password"></ion-input>
     </ion-item>
   </ion-list>
-  <ion-button expand="block" (click)="register()">Register</ion-button>
-  <ion-button expand="block" fill="clear" [routerLink]="['/login']">Sudah punya akun?</ion-button>
+
+  <!-- Tombol Register -->
+  <ion-button expand="block" (click)="register()" class="ion-margin-top">
+    Register
+  </ion-button>
+
+  <!-- Opsi navigasi -->
+  <div class="navigation-options">
+    <ion-text>
+      Sudah punya akun? 
+      <a routerLink="/login" class="ion-margin-start">Login disini</a>
+    </ion-text>
+    <br/>
+    <ion-text class="ion-margin-top">
+      <a routerLink="/home">Kembali ke Home</a>
+    </ion-text>
+  </div>
 </ion-content>
